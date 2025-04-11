@@ -24,11 +24,11 @@ namespace SnakeApi.Services
         public async Task<List<Score>> GetAsync() =>
               await _scoreCollection.Find(score => true).SortByDescending(s => s.ScoreValue).Limit(10).ToListAsync();
 
-        public async Task<Score> GetAsync(string id) =>
-              await _scoreCollection.Find(score => score.Id == id).FirstOrDefaultAsync();
+        //public async Task<Score> GetAsync(string id) =>
+        //      await _scoreCollection.Find(score => score.Id == id).FirstOrDefaultAsync();
 
-        public async Task<List<Score>> GetByUsernameAsync(string username) =>
-              await _scoreCollection.Find(score => score.Username == username).SortByDescending(s => s.ScoreValue).ToListAsync();
+        //public async Task<List<Score>> GetByUsernameAsync(string username) =>
+        //      await _scoreCollection.Find(score => score.Username == username).SortByDescending(s => s.ScoreValue).ToListAsync();
 
         public async Task<Score> CreateAsync(Score score)
         {

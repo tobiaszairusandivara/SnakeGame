@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SnakeApi.Models;
+using SnakeApi.Models.DTOs;
 using SnakeApi.Services;
+using SnakeApi.Tools.Mapper;
 
 namespace SnakeApi.Controllers
 {
@@ -10,27 +12,34 @@ namespace SnakeApi.Controllers
     public class ScoreController : ControllerBase
     {
         private readonly ScoreService _scoreService;
+        private readonly ScoreMapper _scoreMapper;
 
-        public ScoreController(ScoreService scoreService)
+
+        public ScoreController(ScoreService scoreService, ScoreMapper scoreMapper)
         {
             _scoreService = scoreService;
+            _scoreMapper = scoreMapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Score>>> Get() =>
-            await _scoreService.GetAsync();
+        public async Task<ActionResult<List<Score>>> GetTopScores()
+        {
+            var scores = await _scoreService.GetAsync();// Obtener entidades de la base de datos
+            var scoreDTOs = _scoreMapper.Get(scores);// Convertir entidades a DTOs para el frontend
+            return Ok(scoreDTOs);
+        }
+  
+        //[HttpGet("{username}")]
+        //public async Task<ActionResult<List<Score>>> GetByUsername(string username) =>
+        //    await _scoreService.GetByUsernameAsync(username);
 
-        [HttpGet("{username}")]
-        public async Task<ActionResult<List<Score>>> GetByUsername(string username) =>
-            await _scoreService.GetByUsernameAsync(username);
-
-        //hacer un post o revisar que el post de abajo mande nombre Y puntaje
 
         [HttpPost]
-        public async Task<ActionResult<Score>> Post(Score score)
+        public async Task<ActionResult<Score>> CreateScore(ScoreDTO scoreDTO)
         {
-            await _scoreService.CreateAsync(score);
-            return CreatedAtAction(nameof(Get), new { id = score.Id }, score);
+            var score = _scoreMapper.Set(scoreDTO);// Convertir DTO a entidad para la base de datos
+            await _scoreService.CreateAsync(score);//Guardar en la base de datos
+            return CreatedAtAction(nameof(GetTopScores), new { id = score.Id }, score);//Devolver DTO actualizado
         }
     }
 }

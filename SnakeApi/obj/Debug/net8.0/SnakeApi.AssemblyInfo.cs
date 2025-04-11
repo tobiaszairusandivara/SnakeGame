@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnakeApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ca498259b55819b5fb777c0e2d553f672f3f90c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77901cb54b840acd896b0dc2e3be9c0775ae875e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnakeApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnakeApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

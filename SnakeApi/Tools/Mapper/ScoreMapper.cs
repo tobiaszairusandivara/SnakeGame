@@ -24,6 +24,5 @@ namespace SnakeApi.Tools.Mapper
         {
             return base.Get(entityList);
         }
-
     }
 }
