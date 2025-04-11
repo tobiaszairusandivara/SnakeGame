@@ -1,6 +1,5 @@
 ﻿using MongoDB.Driver;
 using SnakeApi.Models;
-using SnakeApi.Models.DTOs;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;

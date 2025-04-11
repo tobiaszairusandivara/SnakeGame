@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SnakeApi.Models.DTOs;
+using SnakeApi.Models;
 using SnakeApi.Services;
 
 namespace SnakeApi.Controllers

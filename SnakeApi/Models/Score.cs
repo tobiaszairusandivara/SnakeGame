@@ -1,8 +1,9 @@
-﻿using MongoDB.Bson;
+﻿#nullable disable
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace SnakeApi.Models.DTOs
+namespace SnakeApi.Models
 {
     public class Score
     {
