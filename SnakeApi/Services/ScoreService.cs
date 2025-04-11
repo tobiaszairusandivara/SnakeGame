@@ -1,6 +1,8 @@
 ﻿using MongoDB.Driver;
 using SnakeApi.Models;
+using SnakeApi.Models.DTOs;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
 
 
@@ -8,27 +10,30 @@ namespace SnakeApi.Services
 {
     public class ScoreService
     {
-        private readonly IMongoCollection<Score> _scores;
+        private readonly IMongoCollection<Score> _scoreCollection;
 
-        public ScoreService(DatabaseSettings settings)
+        public ScoreService(SnakeDatabaseSettings snakeDbSettings)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-            _scores = database.GetCollection<Score>(settings.CollectionName);
+        //En la llamada al método GetCollection<TDocument>(collection):
+        //collection representa el nombre de la colección.
+        //TDocument representa el tipo de objeto CLR almacenado en la colección.
+            var client = new MongoClient(snakeDbSettings.ConnectionString);
+            var database = client.GetDatabase(snakeDbSettings.DatabaseName);
+            _scoreCollection = database.GetCollection<Score>(snakeDbSettings.CollectionName);
         }
 
-        public async Task<Score> GetAsync(string id) =>
-              await _scores.Find(score => score.Id == id).FirstOrDefaultAsync();
+        public async Task<List<Score>> GetAsync() =>
+              await _scoreCollection.Find(score => true).SortByDescending(s => s.ScoreValue).Limit(10).ToListAsync();
 
-        public async Task<List<Score>> GetScoreAsync() =>
-              await _scores.Find(score => true).SortByDescending(s => s.ScoreValue).Limit(10).ToListAsync();
+        public async Task<Score> GetAsync(string id) =>
+              await _scoreCollection.Find(score => score.Id == id).FirstOrDefaultAsync();
 
         public async Task<List<Score>> GetByUsernameAsync(string username) =>
-              await _scores.Find(score => score.Username == username).SortByDescending(s => s.ScoreValue).ToListAsync();
+              await _scoreCollection.Find(score => score.Username == username).SortByDescending(s => s.ScoreValue).ToListAsync();
 
         public async Task<Score> CreateAsync(Score score)
         {
-            await _scores.InsertOneAsync(score);
+            await _scoreCollection.InsertOneAsync(score);
             return score;
         }
     }

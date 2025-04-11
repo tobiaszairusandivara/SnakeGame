@@ -1232,23 +1232,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Users\\Tobias Zair\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\SnakeGame\\SnakeApi\\SnakeApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tobias Zair\\Desktop\\SnakeGame\\SnakeGame\\SnakeApi\\SnakeApi.csproj",
       "projectName": "SnakeApi",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\SnakeGame\\SnakeApi\\SnakeApi.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\SnakeGame\\SnakeApi\\obj\\",
+      "projectPath": "C:\\Users\\Tobias Zair\\Desktop\\SnakeGame\\SnakeGame\\SnakeApi\\SnakeApi.csproj",
+      "packagesPath": "C:\\Users\\Tobias Zair\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tobias Zair\\Desktop\\SnakeGame\\SnakeGame\\SnakeApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tobias Zair\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
