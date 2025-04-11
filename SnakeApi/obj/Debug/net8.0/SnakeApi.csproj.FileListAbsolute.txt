@@ -1,0 +1,8 @@
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.AssemblyInfo.cs
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\SnakeGame\SnakeApi\obj\Debug\net8.0\SnakeApi.sourcelink.json
