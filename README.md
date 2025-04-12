@@ -1,7 +1,9 @@
 # SnakeGame
-TODO List
-#Make the game in the canvas with javascript
-#Make corrections around the css files and html index
-#Add easter eggs
-#Try using pre-maked entities from Mongo with the endpoint
-#Make the logic for post a player
+<h3>TODO List</h1>
+<ul>
+  <li>Make the game in the canvas with javascript</li>
+  <li>Make corrections around the css files and html index</li>
+  <li>Add easter eggs</li>
+  <li>Try using pre-maked entities from Mongo with the endpoint</li>
+  <li>Make the logic for post a player</li>
+</ul>
