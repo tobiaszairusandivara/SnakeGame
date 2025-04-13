@@ -21,7 +21,7 @@ function fillTScores(scores) {
     });
 }
 
-const API_URL = 'https://localhost:63342/api/';
+const API_URL = 'https://localhost:7076/api/';
 
 async function loadLeaderboard() {
     try {

@@ -4,16 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const darkIcon = document.querySelector(".dark-mode-icon");
 
     if (localStorage.getItem("dark-mode") === "true" ||
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){
-            enableDarkMode();
-
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        enableDarkMode();
     }
 
     darkModeToggle.addEventListener('click', function () {
         if (document.documentElement.classList.contains("dark")) {
             disableDarkMode();
-        }
-        else{
+        } else {
             enableDarkMode();
         }
     });
@@ -23,12 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("dark-mode", "true");
         lightIcon.classList.add('hidden');
         darkIcon.classList.remove('hidden');
+        isDarkMode = true;
     }
 
     function disableDarkMode() {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("dark-mode", "false");
-        darkIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
         lightIcon.classList.remove('hidden');
+        isDarkMode = false;
     }
-})
+});
